@@ -15,30 +15,43 @@ function App() {
     <div className="app-shell py-4 py-md-5">
       <div className="container app-container">
         <header className="card border-0 shadow-sm mb-4 app-header-card">
-          <div className="card-body p-4">
-            <p className="text-uppercase small fw-semibold text-primary mb-2">OctoFit Tracker</p>
-            <h1 className="h2 mb-3">Fitness Dashboard</h1>
-            <p className="text-secondary mb-4">
-              Explore users, teams, activities, leaderboard standings and workouts with a
-              consistent Bootstrap experience.
-            </p>
-            <nav className="nav nav-pills flex-wrap gap-2 app-nav" aria-label="Main navigation">
-              <NavLink className={navClassName} to="/users">
-                Users
-              </NavLink>
-              <NavLink className={navClassName} to="/activities">
-                Activities
-              </NavLink>
-              <NavLink className={navClassName} to="/teams">
-                Teams
-              </NavLink>
-              <NavLink className={navClassName} to="/leaderboard">
-                Leaderboard
-              </NavLink>
-              <NavLink className={navClassName} to="/workouts">
-                Workouts
-              </NavLink>
-            </nav>
+          <div className="card-body p-4 p-md-5">
+            <div className="row align-items-center g-4">
+              <div className="col-12 col-md-auto text-center text-md-start">
+                <img
+                  src="/octofitapp-small.png"
+                  alt="OctoFit Tracker logo"
+                  className="app-logo img-fluid"
+                />
+              </div>
+              <div className="col-12 col-md">
+                <p className="text-uppercase small fw-semibold text-primary mb-2">
+                  OctoFit Tracker
+                </p>
+                <h1 className="h2 mb-3 app-title">Fitness Dashboard</h1>
+                <p className="text-secondary mb-4 app-subtitle">
+                  Explore users, teams, activities, leaderboard standings and workouts with a
+                  consistent Bootstrap experience.
+                </p>
+                <nav className="nav nav-pills flex-wrap gap-2 app-nav" aria-label="Main navigation">
+                  <NavLink className={navClassName} to="/users">
+                    Users
+                  </NavLink>
+                  <NavLink className={navClassName} to="/activities">
+                    Activities
+                  </NavLink>
+                  <NavLink className={navClassName} to="/teams">
+                    Teams
+                  </NavLink>
+                  <NavLink className={navClassName} to="/leaderboard">
+                    Leaderboard
+                  </NavLink>
+                  <NavLink className={navClassName} to="/workouts">
+                    Workouts
+                  </NavLink>
+                </nav>
+              </div>
+            </div>
           </div>
         </header>
 

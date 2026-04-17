@@ -1,11 +1,24 @@
 :root {
-  --app-bg-start: #eef4ff;
-  --app-bg-end: #f8fbff;
-  --app-border: #dbe6f9;
+  --app-bg-start: #eaf4ff;
+  --app-bg-mid: #f7fbff;
+  --app-bg-end: #fffaf2;
+  --app-border: #d8e4f3;
+  --app-heading: #123c70;
+  --app-text: #24344d;
+  --app-link: #0d6efd;
+  --app-link-hover: #084298;
+  --app-nav-bg: #eef5ff;
+  --app-nav-active: #0d6efd;
+  --app-table-header: #dcecff;
+  --app-table-stripe: #f7fbff;
 }
 
 body {
-  background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-end) 100%);
+  color: var(--app-text);
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 193, 7, 0.12), transparent 24%),
+    linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 56%, var(--app-bg-end) 100%);
 }
 
 .app-shell {
@@ -17,40 +30,123 @@ body {
 }
 
 .app-header-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f5f9ff 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #f7fbff 55%, #fefcf5 100%);
+  border: 1px solid var(--app-border);
+}
+
+.app-logo {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 2px solid rgba(13, 110, 253, 0.15);
+  box-shadow: 0 18px 36px rgba(18, 60, 112, 0.16);
+  background: #ffffff;
+}
+
+.app-title {
+  color: var(--app-heading);
+}
+
+.app-subtitle {
+  max-width: 60rem;
 }
 
 .app-nav .nav-link {
   border: 1px solid var(--app-border);
-  background-color: #ffffff;
-  color: #1f3f73;
+  background-color: var(--app-nav-bg);
+  color: var(--app-heading);
   font-weight: 500;
 }
 
 .app-nav .nav-link:hover {
-  background-color: #edf3ff;
-  color: #0d3b7a;
+  background-color: #dcecff;
+  color: var(--app-link-hover);
 }
 
 .app-nav .nav-link.active {
+  background-color: var(--app-nav-active);
+  border-color: var(--app-nav-active);
+  color: #ffffff;
+}
+
+.link-primary {
+  color: var(--app-link) !important;
+}
+
+.link-primary:hover {
+  color: var(--app-link-hover) !important;
+}
+
+.btn-primary {
   background-color: #0d6efd;
   border-color: #0d6efd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.btn-outline-primary {
+  color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #0d6efd;
   color: #ffffff;
+}
+
+.btn-outline-secondary {
+  border-color: #7c8ba1;
+  color: #40516d;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+  background-color: #40516d;
+  border-color: #40516d;
+  color: #ffffff;
+}
+
+.resource-section {
+  color: var(--app-text);
 }
 
 .resource-section .card {
   border: 1px solid var(--app-border);
   border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .resource-table thead th {
   font-size: 0.85rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  color: #11406f;
+}
+
+.resource-table thead {
+  background: var(--app-table-header);
+}
+
+.resource-table tbody tr:nth-child(odd) {
+  background-color: var(--app-table-stripe);
+}
+
+.resource-table tbody tr:hover {
+  background-color: #eaf2ff;
 }
 
 .resource-table tbody td {
   vertical-align: middle;
+}
+
+.resource-table .btn {
+  min-width: 5.5rem;
 }
 
 .modal-json {
@@ -61,4 +157,8 @@ body {
   border-radius: 0.6rem;
   padding: 0.9rem;
   font-size: 0.82rem;
+}
+
+.modal-title {
+  color: var(--app-heading);
 }
