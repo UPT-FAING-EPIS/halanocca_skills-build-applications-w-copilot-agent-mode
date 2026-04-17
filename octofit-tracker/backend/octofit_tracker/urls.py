@@ -19,6 +19,10 @@ def api_root(request, format=None):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', api_root),  # 👈 IMPORTANTE
+
+    # 👇 ROOT SOLO AQUÍ (sin chocar con endpoints reales)
+    path('', api_root),
+
+    # 👇 APIs reales
     path('api/', include('octofit_tracker.api_urls')),
 ]
