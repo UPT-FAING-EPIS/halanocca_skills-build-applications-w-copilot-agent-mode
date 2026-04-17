@@ -61,14 +61,10 @@ function ApiResourceTable({ title, resourcePath }) {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const endpoint = useMemo(() => {
-    const codespaceName = process.env.REACT_APP_CODESPACE_NAME;
-    const baseUrl = codespaceName
-      ? `https://${codespaceName}-8000.app.github.dev/api`
-      : 'http://localhost:8000/api';
-
-    return `${baseUrl}/${resourcePath}/`;
-  }, [resourcePath]);
+const endpoint = useMemo(() => {
+  const baseUrl = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api`;
+  return `${baseUrl}/${resourcePath}/`;
+}, [resourcePath]);
 
   const fetchData = useCallback(async () => {
     try {
