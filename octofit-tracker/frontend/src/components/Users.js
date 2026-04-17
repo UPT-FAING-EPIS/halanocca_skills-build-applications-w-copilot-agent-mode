@@ -4,7 +4,9 @@ const Users = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/users/`;
+    const endpoint = process.env.REACT_APP_CODESPACE_NAME
+      ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/users/`
+      : 'http://localhost:8000/api/users/';
     console.log('Fetching users from:', endpoint);
 
     fetch(endpoint)

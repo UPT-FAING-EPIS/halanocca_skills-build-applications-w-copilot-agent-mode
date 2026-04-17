@@ -4,7 +4,9 @@ const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    const endpoint = `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`;
+    const endpoint = process.env.REACT_APP_CODESPACE_NAME
+      ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+      : 'http://localhost:8000/api/workouts/';
     console.log('Fetching workouts from:', endpoint);
 
     fetch(endpoint)
