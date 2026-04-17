@@ -8,7 +8,12 @@ const Teams = () => {
     console.log('Fetching teams from:', endpoint);
 
     fetch(endpoint)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log('Teams data:', data);
         setTeams(Array.isArray(data) ? data : data.results || []);

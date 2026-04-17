@@ -8,7 +8,12 @@ const Activities = () => {
     console.log('Fetching activities from:', endpoint);
 
     fetch(endpoint)
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log('Activities data:', data);
         setActivities(Array.isArray(data) ? data : data.results || []);
